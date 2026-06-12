@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-text: var(--brand-text);
+  --color-brand-charcoal: var(--brand-charcoal);
+  --color-brand-grey: var(--brand-grey);
+  --color-brand-green: var(--brand-green);
+  --color-brand-bluegrey: var(--brand-bluegrey);
+  --color-brand-paper: var(--brand-paper);
+}
+
+:root, .dark {
+  --brand-bg: #0C0C0C;
+  --brand-text: #D4CDC4;
+  --brand-charcoal: #E5E1DB;
+  --brand-grey: #1E1E1E;
+  --brand-green: #8FA499;
+  --brand-bluegrey: #5C6861;
+  --brand-paper: #121212;
+}
+
+.light {
+  --brand-bg: #F5F3EC;
+  --brand-text: #242424;
+  --brand-charcoal: #1E1E1E;
+  --brand-grey: #D5D2C6;
+  --brand-green: #324238;
+  --brand-bluegrey: #6E7980;
+  --brand-paper: #EDEAE1;
+}
+
+/* Custom Fine Grain Background Animation */
+.grain-overlay {
+  position: fixed;
+  top: -150%;
+  left: -150%;
+  right: -150%;
+  bottom: -150%;
+  width: 400%;
+  height: 400%;
+  background: transparent url("data:image/svg+xml,%3Csvg viewBox='0%25 0%25 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.045'/%3E%3C/svg%3E") repeat;
+  animation: grainShift 8s steps(10) infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes grainShift {
+  0%, 100% { transform:translate(0, 0); }
+  10% { transform:translate(-5%, -10%); }
+  20% { transform:translate(-15%, 5%); }
+  30% { transform:translate(7%, -25%); }
+  40% { transform:translate(-5%, 25%); }
+  50% { transform:translate(-15%, 10%); }
+  60% { transform:translate(15%, 0%); }
+  70% { transform:translate(0%, 15%); }
+  80% { transform:translate(3%, 35%); }
+  90% { transform:translate(-10%, 10%); }
+}
+
+/* Minimalistic elegant scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0C0C0C;
+}
+::-webkit-scrollbar-thumb {
+  background: #242424;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8FA499;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+/* Custom Text Reveal mask */
+.text-reveal {
+  background: linear-gradient(to right, #D4CDC4 100%, transparent 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+/* X-Ray texture mask zoom utility */
+.glass-lens {
+  box-shadow: 0 0 0 9999px rgba(12, 12, 12, 0.75);
+}

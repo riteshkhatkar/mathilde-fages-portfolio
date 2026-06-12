@@ -1,0 +1,6 @@
+{
+  "name": "Mathilde Fages - Immersive Art Exhibition",
+  "description": "An immersive contemporary exhibition and digital artwork archive for French visual artist Mathilde Fages, exploring forests, skies, engraving, lithography, and memory fields.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
